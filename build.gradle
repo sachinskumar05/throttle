@@ -1,0 +1,30 @@
+
+plugins {
+    id "io.freefair.lombok" version "6.1.0-m3"
+}
+apply plugin: 'java'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+    implementation  group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+    implementation group: 'log4j', name: 'apache-log4j-extras', version: '1.2.17'
+
+    testImplementation group: 'org.projectlombok.test', name: 'test-maven-lombok', version: '1.18.20.0'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.0-M1'
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+
+}
+
+test {
+    useJUnitPlatform()
+}
